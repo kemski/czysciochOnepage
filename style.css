@@ -18,53 +18,59 @@ html,
 body {
     overflow-x: hidden;
     position: relative;
+    max-width: 1920px;
+    margin: auto;
 }
 
+/* Menu styling for desktops */
 header {
     display: flex;
-    min-height: 10vh;
+    min-height: 25vh;
     width: 90%;
-    margin: 2vh auto 0 auto;
-    justify-content: space-between;
+    margin: auto;
+    justify-content: center;
     align-items: center;
     font-family: 'Open Sans', sans-serif;
-    /* padding: 5rem; */
+    z-index: 2;
+
 }
 
 .logo-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
     flex: 1;
+    z-index: 2;
 }
 
 .nav-logo {
-    /* padding: 1.5rem 3rem; */
     width: 100%;
     height: 100%;
     flex: 1;
+    margin-top: 2vh;
+    z-index: 2;
 }
 
 .links-container {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    flex: 3 60%;
-
+    justify-content: center;
+    flex: 3 40%;
+    z-index: 2;
 }
 
 .links-container a {
     text-decoration: none;
     color: #2c8e95;
     padding: 1rem 2rem;
-    font-size: calc(1.6rem + 0.25rem);
+    font-size: calc(1.6rem + 0.2rem);
     position: relative;
     overflow: hidden;
     transition: 0.5s ease;
     outline: none;
+    margin: 0 .5rem;
+    font-weight: 600;
+    z-index: 2;
 }
 
 .links-container a::after {
@@ -73,7 +79,7 @@ header {
     bottom: 0;
     left: -100%;
     width: 100%;
-    height: 1px;
+    height: 2px;
     background-color: var(--contactButtonColor);
     transition: 0.5s ease;
 }
@@ -83,18 +89,16 @@ header {
 }
 
 .contact-button {
-    width: 80%;
-    padding: 1rem 3rem;
-    font-size: calc(1.2rem + .3vw);
-    flex: 1;
-    text-decoration: none;
+    padding: 1.5rem 3rem;
+    font-size: calc(1.6rem + .2vw);
     color: white;
     background-color: #2c8e95;
     border: none;
-    border-radius: 2rem;
-    text-align: center;
+    border-radius: 3rem;
     cursor: pointer;
     transition: all 0.5s ease;
+    font-weight: 600;
+    flex-basis: 15%;
 }
 
 .contact-button:hover {
@@ -110,19 +114,18 @@ header {
     background-position: left center;
     width: 60%;
     height: 50%;
-    /* padding: 0 6% 0 6%;*/
-    /* border: 2px red solid; */
     z-index: 2;
 }
 
+/* End of styling for Desktops  */
+
+/* Hamburger Menu for Mobile Devices */
 .burger {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 40px;
-    /* /* justify-content: center; */
     align-items: center;
-    /* border: 2px red solid; */
     z-index: 2;
     cursor: pointer;
 }
@@ -132,59 +135,58 @@ header {
     height: 3px;
     margin: 2.5px auto;
     background-color: var(--aboutUsH1Color);
-    /* box-shadow: 2px 2px 2px #5d7fbf; */
     transition: 0.5s ease-in;
 }
 
 /* Ilustration on main page */
 div.image {
-    display: block;
-    position: absolute;
-    top: 10vh;
     width: 100%;
-    height: 55vh;
-    background: url("/img/illustration_new.png");
+    height: 90vh;
+    background: url("./img/ilustracja.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
     z-index: -1;
-    transition: 0.5s ease-in;
+    position: relative;
 }
 
 /* #O Nas  */
 .aboutUs {
-    margin-top: 45vh;
-    transition: 0.5s ease-in;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 20vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    min-height: 85vh;
 }
 
 .aboutUs h1 {
     text-align: center;
     font-size: 2.2rem;
     font-weight: bold;
-    color: var(--aboutUsH1Color);
-    /* text-shadow: 2px 2px 3px #aaaaaa; */
+    color: black
 }
 
 .aboutUs p {
+    width: 80%;
+    line-height: 4rem;
     text-align: justify;
-    font-size: 1.2rem;
-    /* letter-spacing: .5px; */
-    padding: 5% 5%;
-    color: var(--aboutUsTextColor);
+    font-size: 2.2rem;
+    padding: 5rem 5rem;
+    color: black;
 }
 
 .moveDownImage {
     margin-top: 30vh;
-
 }
 
 .moveDownAboutUs {
     margin-top: 75vh;
-
 }
 
 @keyframes navLinkFadeIn {
-
     from {
         opacity: 0;
         transform: translateX(50px);
@@ -197,7 +199,6 @@ div.image {
 }
 
 .toggle .line1 {
-    /* transform-origin: 25% 25%; */
     transform: rotate(-45deg) translate(-5.5px, 5.5px);
     background-color: var(--aboutUsH1Color);
     box-shadow: none;
@@ -208,33 +209,22 @@ div.image {
 }
 
 .toggle .line3 {
-    /* transform-origin: -25% 120%; */
     transform: rotate(45deg) translate(-5.5px, -5.5px);
     background-color: var(--aboutUsH1Color);
     box-shadow: none
 }
 
 /* Servises provided by company */
-
 .services {
-
     margin-top: 5vh;
     height: 50vh;
-    /* border: solid 2px red; */
 }
 
 .horizontalMenuWrapper {
-    /* border: solid 2px orange; */
-    /* display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto; */
     -webkit-overflow-scrolling: touch;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    /* &::-webkit-scrollbar {
-        display: none;
-    } */
 }
 
 .services h2 {
@@ -242,39 +232,17 @@ div.image {
     font-size: 1.6rem;
     font-weight: bold;
     color: var(--aboutUsH1Color);
-    /* text-shadow: 2px 2px 3px #aaaaaa; */
 }
 
-/* .servicesParagraph {
-
-    margin-top: 3vh;
-    text-align: center;
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: var(--aboutUsH1Color);
-    text-shadow: 2px 2px 3px #aaaaaa;
-} */
 
 .horizontalMenu {
-    /* flex: 0 0 auto; */
     position: relative;
     display: inline-block;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    /* align-items: space-around; */
-    /* border: solid yellow 2px; */
-    /* box-shadow: 10px 10px 38px 0px rgba(170, 170, 170, 0.3); */
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2), 0px 20px 40px rgba(0, 0, 0, 0.2);
     width: 57vw;
     height: 25vh;
     margin: 5vh 5vw;
 }
-
-/* .serviceX:nth-child(3) {
-    margin-right: 30.75vw;
-} */
-
 
 .horizontalMenu img {
     display: block;
@@ -582,6 +550,39 @@ div.image {
     margin: .3rem 0;
 }
 
+@media (max-width: 1599px) {
+    .logo-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 2;
+    }
+
+    .nav-logo {
+        width: 100%;
+        height: 100%;
+        flex: 3;
+        margin-top: 2vh;
+        padding: 2rem;
+    }
+
+    .contact-button {
+        flex-basis: 18%;
+    }
+
+}
+
+@media (max-width: 1224px) {
+    .nav-logo {
+        padding: 1rem;
+    }
+
+    .contact-button {
+        padding: 1.5rem 1rem;
+
+    }
+}
+
 @media (min-width: 768px) {
 
     .logo {
@@ -603,7 +604,3 @@ div.image {
         background-position: right top;
     }
 }
-
-@media (min-width: 992px) {}
-
-@media (min-width: 1200px) {}
