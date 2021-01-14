@@ -20,19 +20,19 @@ body {
     position: relative;
     max-width: 1920px;
     margin: auto;
+    max-height: 100vh;
 }
 
 /* Menu styling for desktops */
 header {
     display: flex;
-    min-height: 25vh;
+    height: 20vh;
     width: 90%;
-    margin: auto;
+    margin: 2.5vh auto;
     justify-content: center;
     align-items: center;
     font-family: 'Open Sans', sans-serif;
     z-index: 2;
-
 }
 
 .logo-wrapper {
@@ -99,6 +99,7 @@ header {
     transition: all 0.5s ease;
     font-weight: 600;
     flex-basis: 15%;
+    outline: none;
 }
 
 .contact-button:hover {
@@ -139,9 +140,9 @@ header {
 }
 
 /* Ilustration on main page */
-div.image {
+.image {
     width: 100%;
-    height: 90vh;
+    min-height: 75vh;
     background: url("./img/ilustracja.svg");
     background-repeat: no-repeat;
     background-size: contain;
@@ -159,7 +160,7 @@ div.image {
     align-items: center;
     top: 20vh;
     background-color: rgba(255, 255, 255, 0.7);
-    min-height: 85vh;
+    min-height: 75vh;
 }
 
 .aboutUs h1 {
@@ -170,21 +171,21 @@ div.image {
 }
 
 .aboutUs p {
-    width: 80%;
+    width: 90%;
     line-height: 4rem;
     text-align: justify;
     font-size: 2.2rem;
-    padding: 5rem 5rem;
     color: black;
+    padding: 10rem 0rem;
 }
 
-.moveDownImage {
+/* .moveDownImage {
     margin-top: 30vh;
 }
 
 .moveDownAboutUs {
     margin-top: 75vh;
-}
+} */
 
 @keyframes navLinkFadeIn {
     from {
@@ -216,57 +217,54 @@ div.image {
 
 /* Servises provided by company */
 .services {
-    margin-top: 5vh;
-    height: 50vh;
+    position: absolute;
+    top: 20vh;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 75vh;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
-.horizontalMenuWrapper {
-    -webkit-overflow-scrolling: touch;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
+.services-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 80%;
 }
 
 .services h2 {
-    text-align: center;
-    font-size: 1.6rem;
-    font-weight: bold;
+    font-size: calc(1.6rem + .2vw);
+    font-weight: 600;
     color: var(--aboutUsH1Color);
 }
 
-
 .horizontalMenu {
-    position: relative;
-    display: inline-block;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2), 0px 20px 40px rgba(0, 0, 0, 0.2);
-    width: 57vw;
-    height: 25vh;
-    margin: 5vh 5vw;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .8);
+    width: 15vw;
+    height: 15vw;
+    margin: 2.5vw 2.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .horizontalMenu img {
-    display: block;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30%;
-    height: 40%;
-
-
+    width: 40%;
+    color: var(--aboutUsTextColor);
 }
 
 .horizontalMenu p {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    white-space: normal;
-    font-size: 1rem;
-    color: var(--aboutUsTextColor);
-    font-weight: bold;
+    font-size: 1.4rem;
+    font-weight: 600;
     text-align: center;
-    /* text-shadow: 1px 1px 2px #aaaaaa; */
+    color: var(--aboutUsTextColor);
 }
 
 /* Styling for opinions container */
